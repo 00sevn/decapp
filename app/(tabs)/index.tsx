@@ -1,9 +1,19 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import { Image, StyleSheet, Platform, 
+  //Button ctrl c+v
+  Button,
+  View,
+  SafeAreaView,
+  Text,
+  Alert,} from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+
+
+
+
 
 export default function HomeScreen() {
   return (
@@ -16,9 +26,18 @@ export default function HomeScreen() {
         />
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
+        <ThemedText type="title">decaton!</ThemedText>
         <HelloWave />
+        <Button
+        title="Press me"
+        onPress={() => Alert.alert('Simple Button pressed')}
+        />
       </ThemedView>
+      <Button
+        title="Learn More"
+        color="#841584"
+        accessibilityLabel="Learn more about this purple button"
+      />
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 1: Try it</ThemedText>
         <ThemedText>
@@ -67,4 +86,23 @@ const styles = StyleSheet.create({
     left: 0,
     position: 'absolute',
   },
+  //ctrl c+v from button page
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      marginHorizontal: 16,
+    },
+    title: {
+      textAlign: 'center',
+      marginVertical: 8,
+    },
+    fixToText: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+    },
+    separator: {
+      marginVertical: 8,
+      borderBottomColor: '#737373',
+      borderBottomWidth: StyleSheet.hairlineWidth,
+    },
 });
